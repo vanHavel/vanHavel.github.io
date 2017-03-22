@@ -1,0 +1,51 @@
+/* basic settings */
+body {
+  background-color: #1a1a2a;
+  color: white;
+}
+
+div.content {
+  width: 70%;
+  margin: auto;
+  font-size: 30px;
+}
+
+/* headline */
+h1 {
+  font-size: 50px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px grey;
+  color: white;
+}
+
+/* list format */
+li {
+  margin: 10px;
+}
+
+li span {
+  color: white;
+}
+
+li span.mark {
+  color: #66e0ff;
+}
+
+/* link format */
+a:link {
+  font-weight: bold;
+  color: orange;
+}
+
+a:visited {
+  font-weight: bold;
+  color: #cc7a00;
+}
+
+a:hover {
+  color: #ffb84d;
+}
+
+a:active {
+  color: #ffd699;
+}
