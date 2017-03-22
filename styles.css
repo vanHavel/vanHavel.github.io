@@ -4,48 +4,89 @@ body {
   color: white;
 }
 
-div.content {
-  width: 70%;
+main {
+  width: 60%;
   margin: auto;
   font-size: 30px;
+  float: left;
 }
 
+nav {
+  width: 20%;
+  margin: auto;
+  font-size: 24px;
+  float: left;
+}
+
+header {
+  width: 50%;
+  margin: auto;
+}
+
+/* header */
+
 /* headline */
-h1 {
+header h1 {
   font-size: 50px;
   font-family: sans-serif;
   text-shadow: 2px 2px grey;
   color: white;
 }
 
+/* nav */
+
+/* list icons */
+nav ul {
+  list-style-image: url('f8b.png');
+}
+
+nav ul ul {
+  list-style-image: url('f3b.png');
+}
+
+/* link format */
+nav a:link, nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  padding: 0px 0px 0px 10px;
+}
+
+nav a:active {
+  padding: 0px 0px 0px 10px;
+  text-decoration: underline;
+}
+
+/* main */
+
 /* list format */
-li {
+main li {
   margin: 10px;
 }
 
-li span {
+main li span {
   color: white;
 }
 
-li span.mark {
+main li span.mark {
   color: #66e0ff;
 }
 
 /* link format */
-a:link {
-  font-weight: bold;
+main a:link {
   color: orange;
 }
 
-a:visited {
-  font-weight: bold;
+main a:visited {
   color: #cc7a00;
 }
 
-a:hover {
+main a:hover {
   color: #ffb84d;
 }
 
-a:active {
+main a:active {
   color: #ffd699;
 }
