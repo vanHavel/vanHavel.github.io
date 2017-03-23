@@ -23,6 +23,11 @@ header {
   margin: auto;
 }
 
+footer {
+  width: 60%;
+  margin: auto;
+}
+
 /* header */
 
 /* headline */
@@ -89,4 +94,22 @@ main a:hover {
 
 main a:active {
   color: #ffd699;
+}
+
+/* footer */
+
+footer p {
+  margin: 0px;
+}
+
+#output {
+  white-space: pre-wrap;
+}
+
+#cmd {
+  background-color: #1a1a2a;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
 }

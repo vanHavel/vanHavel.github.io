@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
+    <script language="javascript" type="text/javascript" src="script.js"></script>
     <title>vanHavel's GitHub page</title>
   </head>
   <body>
@@ -57,5 +58,18 @@
         </ul>
       </p>
     </main>
+    <!-- footer div --> 
+    <footer>
+      <div id="cli">
+        <form onsubmit="handleInput(); return false;">
+          vanHavel@GitHub:/coding$<input type="text" id="cmd"></input>
+        </form>
+      </div>
+      <div id="terminal">
+        <p>
+          <span id="output">-bash: ./fizbuz: no such file or directory</span>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
