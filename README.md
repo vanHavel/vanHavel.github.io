@@ -1,2 +1,2 @@
 My central GitHub page.
-Access it by [here](vanhavel.github.io).
+Access it [here](vanhavel.github.io).
