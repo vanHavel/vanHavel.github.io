@@ -1,2 +1,2 @@
 My central GitHub page.
-Access it by typing vanhavel.github.io into your adress bar.
+Access it by [here](vanhavel.github.io).
