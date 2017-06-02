@@ -1,0 +1,12 @@
+---
+layout: blog
+title: vanHavel's Blog
+---
+{% for post in site.posts limit:1 %}
+<h1>{{ post.title }}</h1>
+<p class="meta">{{ post.date | date_to_string }}</p>
+
+<div class="post">
+  {{ post.content }}
+</div>
+{% endfor %}

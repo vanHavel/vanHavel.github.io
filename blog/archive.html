@@ -1,0 +1,17 @@
+---
+layout: blog
+title: Blog Archive
+---
+
+<h1> {{page.title}} </h1>
+
+<ul class="archive">
+  {% for post in site.posts%}
+    <li> 
+      <p>
+      <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+      <span>({{ post.date | date_to_string }})</span>
+      </p>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="postholder">
+  {{content}}
+</div>
+<div class="postnav">
+  <h2>Recent posts</h2>
+	<ul class="posts">
+
+	  {% for post in site.posts limit:3%}
+	    <li> 
+        <p>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        <span>({{ post.date | date_to_string }})</span>
+        </p>
+        {{ post.content | strip_html | truncate: 100, '...'}}
+      </li>
+	  {% endfor %}
+	</ul>
+  <h2><a href="/blog/archive">Archive</a></h2>
+</div>

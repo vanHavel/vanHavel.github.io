@@ -115,7 +115,7 @@ function handleInput() {
     }
     else if (inputText.slice(4) == "fizzbuzz.hs") {
       outputText = "main = print . join $ map fizzbuzz [1..50]<br>"
-                 + "  where join = foldl1 (\ x y -> x ++ \" \" ++ y)<br>" 
+                 + "  where join = foldl1 (\\ x y -> x ++ \" \" ++ y)<br>" 
                  + "<br>"
                  + "fizzbuzz :: Int -> String<br>"
                  + "fizzbuzz i | i `mod` 15 == 0 = \"fizzbuzz\"<br>"

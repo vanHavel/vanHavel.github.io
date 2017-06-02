@@ -1,0 +1,116 @@
+/* basic settings */
+
+body {
+    background-color: #1a1a2a;
+    color: white;
+}
+
+main {
+  width: 70%;
+  margin-right: 60px auto;
+  font-size: 1.6em;
+  float: left;
+}
+
+#side {
+  width: 20%;
+  margin: auto;
+  font-size: 1.5em;
+  float:left;
+}
+
+
+#bottom {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+/* nav and footer links */
+a {
+    color: white;
+}
+
+/* headline */
+h1 {
+  font-size: 50px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px grey;
+  color: white;
+}
+
+/* #side */
+
+/* list icons */
+#side ul {
+  list-style-image: url('/icons/f8b.png');
+}
+
+#side ul ul {
+  list-style-image: url('/icons/f3b.png');
+}
+
+/* link format */
+#side a:link, #side a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#side a:hover {
+  padding: 0px 0px 0px 10px;
+}
+
+#side a:active {
+  padding: 0px 0px 0px 10px;
+  text-decoration: underline;
+}
+
+/* main */
+
+/* list format */
+main li {
+  margin: 10px;
+}
+
+main li span {
+  color: white;
+}
+
+span.mark {
+  color: #66e0ff;
+}
+
+/* link format */
+main a:link {
+  color: orange;
+}
+
+main a:visited {
+  color: #cc7a00;
+}
+
+main a:hover {
+  color: #ffb84d;
+}
+
+main a:active {
+  color: #ffd699;
+}
+
+/* #bottom */
+
+#bottom p {
+  margin: 0px;
+}
+
+#output {
+  white-space: pre-wrap;
+}
+
+#cmd {
+  background-color: #1a1a2a;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}

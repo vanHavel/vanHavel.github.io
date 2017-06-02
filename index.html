@@ -1,75 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
-    <script language="javascript" type="text/javascript" src="script.js"></script>
-    <title>vanHavel's GitHub page</title>
-  </head>
-  <body>
-    <!-- header div -->
-    <header>
-      <h1>vanHavel's GitHub page</h1>
-    </header>
-    <!-- nav div -->
-    <nav>
+---
+layout: default
+title: Van Havel's GitHub page
+main: true
+---
+<script language="javascript" type="text/javascript" src="script.js"></script>
+<div id="side">
+  <ul>
+    <li>
+      Projects
       <ul>
         <li>
-          Projects
-          <ul>
-            <li>
-              <a href="https://github.com/vanHavel/ChatBar">ChatBar</a>
-            </li>
-            <li>
-              <a href="https://github.com/vanHavel/OmAlg">OmAlg</a>
-            </li>
-            <li>
-              <a href="https://github.com/vanHavel/TwitNet">TwitNet</a>
-            </li>
-          </ul>
+          <a href="https://github.com/vanHavel/ChatBar">ChatBar</a>
         </li>
         <li>
-          Misc
-          <ul>
-            <li>
-              <a href="https://github.com/vanHavel/AdventOfCode2016">AoC 2016</a>
-            </li>
-          </ul>
+          <a href="https://github.com/vanHavel/OmAlg">OmAlg</a>
+        </li>
+        <li>
+          <a href="https://github.com/vanHavel/TwitNet">TwitNet</a>
         </li>
       </ul>
-    </nav>
-    <!-- main div -->
-    <main>
-      <p>
-        Here you can find some of my projects, including
-        <ul>
-          <li> <span> 
-            <a href="https://github.com/vanHavel/ChatBar">ChatBar</a> - an OSX app that displays <span class="mark">Twitch Chat</span> in the MacBook Pro <span class="mark">Touch Bar</span> 
-          </span> </li>
-          <li> <span> 
-            <a href="https://github.com/vanHavel/OmAlg">OmAlg</a> - a library containing algorithms from the <span class="mark">algebraic theory of omega automata</span>
-          </span> </li>
-          <li> <span> 
-            <a href="https://github.com/vanHavel/TwitNet">TwitNet</a> - some python scripts to train recurrent neural network <span class="mark">language models</span> on <span class="mark">tweets</span>, using <a href="https://keras.io">Keras</a> 
-          </span> </li>
-          <li> <span> 
-            My <a href="https://github.com/vanHavel/AdventOfCode2016">solutions</a> for <a href="https://adventofcode.com/2016">Advent of Code 2016</a>, written in <span class="mark">Haskell</span> 
-          </span> </li>
-        </ul>
-      </p>
-    </main>
-    <!-- footer div --> 
-    <footer>
-      <div id="cli">
-        <form onsubmit="handleInput(); return false;">
-          vanHavel@GitHub:/coding$<input type="text" id="cmd"></input>
-        </form>
-      </div>
-      <div id="terminal">
-        <p>
-          <span id="output">-bash: ./fizbuz: no such file or directory</span>
-        </p>
-      </div>
-    </footer>
-  </body>
-</html>
+    </li>
+    <li>
+      Misc
+      <ul>
+        <li>
+          <a href="https://github.com/vanHavel/AdventOfCode2016">AoC 2016</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- main div -->
+<main>
+  <p>
+    Here you can find some of my projects, including
+    <ul>
+      <li> <span> 
+        <a href="https://github.com/vanHavel/ChatBar">ChatBar</a> - an OSX app that displays <span class="mark">Twitch Chat</span> in the MacBook Pro <span class="mark">Touch Bar</span> 
+      </span> </li>
+      <li> <span> 
+        <a href="https://github.com/vanHavel/OmAlg">OmAlg</a> - a library containing algorithms from the <span class="mark">algebraic theory of omega automata</span>
+      </span> </li>
+      <li> <span> 
+        <a href="https://github.com/vanHavel/TwitNet">TwitNet</a> - some python scripts to train recurrent neural network <span class="mark">language models</span> on <span class="mark">tweets</span>, using <a href="https://keras.io">Keras</a> 
+      </span> </li>
+      <li> <span> 
+        My <a href="https://github.com/vanHavel/AdventOfCode2016">solutions</a> for <a href="https://adventofcode.com/2016">Advent of Code 2016</a>, written in <span class="mark">Haskell</span> 
+      </span> </li>
+    </ul>
+    I also have a <span class="mark">blog</span> <a href="/blog/">here</a>.
+  </p>
+</main>
+<!-- footer div --> 
+<div id="bottom">
+  <div id="cli">
+    <form onsubmit="handleInput(); return false;">
+      vanHavel@GitHub:/coding$<input type="text" id="cmd"></input>
+    </form>
+  </div>
+  <div id="terminal">
+    <p>
+      <span id="output">-bash: ./fizbuz: no such file or directory</span>
+    </p>
+  </div>
+</footer>
