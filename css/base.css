@@ -6,7 +6,12 @@ body {
 nav {
   font-size: 1.2em;
   border-bottom: 1px solid #d5d5d5;
-  overflow: auto;
+}
+
+nav::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 footer {
