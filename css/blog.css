@@ -15,25 +15,13 @@ ul.archive {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-div.postnav h2 {
-  padding-left: 20px;
-  font-size: 1.6em;
-  font-family:'Helvetica', 'Arial', 'Sans-Serif';
-}
-
-p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-}
-
 div.postnav {
-  width: 25%;
-  height: 80vh;
+  width: 19%;
+  height: 100vh;
   float: left;
   overflow-y: scroll;
 }
@@ -42,9 +30,19 @@ div.postnav a {
   color: blue;
 }
 
+div.postnav h2 {
+  padding-left: 20px;
+  font-size: 1.6em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+
+div.postnav p {
+  font-size: 1.2em;
+}
+
 div.postholder {
-  width: 74%;
-  height: 80vh;
+  width: 80%;
+  height: 100vh;
   float: left;
   margin: auto;
   border-right: 1px solid #d5d5d5;
@@ -52,4 +50,33 @@ div.postholder {
   margin-bottom: 20px;
   margin-top: 20px;
   overflow-y: scroll;
+}
+
+div.postholder p, ul, table {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: #333;
+}
+
+div.postholder table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:2px solid #000000;
+}
+
+div.postholder th {
+    border:2px solid #000000;
+}
+
+div.postholder td {
+    border:1px solid #000000;
+}
+
+div.image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.separator {
+  border-top: 3px solid #444444;
 }
