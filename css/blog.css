@@ -52,7 +52,7 @@ div.postholder {
   overflow-y: scroll;
 }
 
-div.postholder p, ul, table {
+div.postholder p, ul, table, code {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
@@ -77,10 +77,6 @@ div.postholder td {
 div.image {
   margin-left: auto;
   margin-right: auto;
-}
-
-div.separator {
-  border-top: 3px solid #444444;
 }
 
 div.centerer img{
