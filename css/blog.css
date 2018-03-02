@@ -12,6 +12,11 @@ ul.posts li p {
 
 ul.archive {
   font-weight: bold;
+  font-size: 1.2em;
+}
+
+ul.archive li {
+  margin-bottom: -10px;
 }
 
 h1 {
@@ -19,11 +24,16 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-div.postnav {
-  width: 19%;
-  height: 100vh;
+div.postlist {
   float: left;
-  overflow-y: scroll;
+  width: 100%;
+}
+
+div.postlist li {
+  margin: 10px;
+  display: block;
+  float: left;
+  width: 30%;
 }
 
 div.postnav a {
@@ -40,13 +50,13 @@ div.postnav p {
   font-size: 1.2em;
 }
 
+div.archivediv {
+  float: none;
+}
+
 div.postholder {
-  width: 80%;
-  height: 100vh;
-  float: left;
+  width: 75%;
   margin: auto;
-  border-right: 1px solid #d5d5d5;
-  padding-right: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
   overflow-y: scroll;
