@@ -72,6 +72,52 @@ div.postholder pre {
   color: #333;
 }
 
+div.postholder ul ul,
+div.postholder ol ol,
+div.postholder ul ol,
+div.postholder ol ul {
+  font-size: 1em;
+}
+
+div.postholder ol,
+div.postholder ul {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+/* Legal-style nested numbering (1.1, 1.1.1, etc.) */
+div.postholder ol {
+  counter-reset: section;
+  list-style-type: none;
+  padding-left: 1.5em;
+}
+
+div.postholder ol li {
+  counter-increment: section;
+  margin-bottom: 0.2em;
+}
+
+div.postholder ul li {
+  margin-bottom: 0.2em;
+}
+
+div.postholder ol li::before {
+  content: counters(section, ".") ". ";
+  font-weight: bold;
+  color: #24292e;
+  margin-left: -1.5em;
+  padding-right: 0.5em;
+}
+
+/* Reset for deeply nested lists to align correctly */
+div.postholder ol ol,
+div.postholder ul ul,
+div.postholder ol ul,
+div.postholder ul ol {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
 div.postholder code {
   font-size: 0.85em;
   /* Prevent code from being huge inside p, and generally look better */
@@ -420,18 +466,35 @@ div.side-by-side>* {
 
 div.postholder table {
   border-collapse: collapse;
-  border-spacing: 0;
-  border: 2px solid #000000;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2em auto;
+  width: auto;
+  min-width: 60%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e1e4e8;
 }
 
 div.postholder th {
-  border: 2px solid #000000;
+  background-color: #f6f8fa;
+  color: #24292e;
+  font-weight: 600;
+  border-bottom: 2px solid #d1d5da;
 }
 
+div.postholder th,
 div.postholder td {
-  border: 1px solid #000000;
+  padding: 12px 20px;
+  border: 1px solid #e1e4e8;
+  text-align: left;
+}
+
+div.postholder tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+div.postholder tr:hover {
+  background-color: #f1f3f5;
 }
 
 div.image {
