@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Robots to Generate Puzzles for Humans"
-date: 2026-01-31
+date: 2026-02-01
 ---
 
 **TL;DR:** I created a logic based solver and generator for **japanese arrow** puzzles. You can try them at [yazudo.app](https://yazudo.app) or [check out the code](https://github.com/vanHavel/japanese-arrows).
