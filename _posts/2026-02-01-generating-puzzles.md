@@ -4,7 +4,7 @@ title: "Using Robots to Generate Puzzles for Humans"
 date: 2026-02-01
 ---
 
-**TL;DR:** I created a logic based solver and generator for **japanese arrow** puzzles. You can try them at [yazudo.app](https://yazudo.app) or [check out the code](https://github.com/vanHavel/japanese-arrows).
+**TL;DR:** I created a logic-based solver and generator for **japanese arrow** puzzles. You can try them at [yazudo.app](https://yazudo.app) or [check out the code](https://github.com/vanHavel/japanese-arrows).
 
 <div class="centerer">
   <a href="https://yazudo.app/?date=2026-01-30">
@@ -173,7 +173,7 @@ This approach would certainly work well. So why did I not follow it?
 
 # Representing Rules Using Logical Formulas
 
-In the end, we are writing *logical* rules, so why not represent them using logical formulas? I have decided to use **first order logic** to represent the rules via **conditions** and **conclusions**. For example, for the above rule, the condition can be written as
+In the end, we are writing *logical* rules, so why not represent them using logical formulas? I have decided to use **first-order logic** to represent the rules via **conditions** and **conclusions**. For example, for the above rule, the condition can be written as
 
 \begin{equation}
 \exists p,q,i (\text{next}(p) = q \wedge \text{dir}(p) = \text{dir}(q) \wedge \text{val}(q) = i \wedge i \neq \text{nil})
@@ -189,16 +189,16 @@ The conclusion is
 
 The cell at $p$ can only be either $i$ or $i+1$.
 
-The formal language applied is **first order logic (FO)** with a set of **relations** and **functions** that are related to the puzzle structure, such as `next`, `dir` and `val`. Some other examples are
+The formal language applied is **first-order logic (FO)** with a set of **relations** and **functions** that are related to the puzzle structure, such as `next`, `dir` and `val`. Some other examples are
 - the binary relation `points_at(p, q)` which is true when $q$ can be seen (immediately or with other cells inbetween) by the arrow at $p$
 - the function `sees_distinct(p)` which is the count of distinct numbers currently seen by the arrow at $p$
 
-So we could encode the constraint of a filled out japanese arrow grid being valid as 
+So we could encode the constraint of a filled out *japanese* arrow grid being valid as 
 \begin{equation}
 \forall p (\text{val}(p) = \text{sees\_distinct}(p))
 \end{equation}
 
-But how do we use these conditions and conclusions in the solver to apply rules? Each condition is a first order formula with some **existential quantifiers** (e.g. $\exists p,q,i$ above). We are trying to find positions $p,q$ and numbers $i$ to make the formula true, essentially by trying all possible candidates until we find a **witness** $p,q,i$ that fulfills the conditions. Let's look again at our example puzzle from above:
+But how do we use these conditions and conclusions in the solver to apply rules? Each condition is a first-order formula with some **existential quantifiers** (e.g. $\exists p,q,i$ above). We are trying to find positions $p,q$ and numbers $i$ to make the formula true, essentially by trying all possible candidates until we find a **witness** $p,q,i$ that fulfills the conditions. Let's look again at our example puzzle from above:
 
 <div class="centerer">
   <img src="{{ site.url }}/img/yazudo/rule.png" width="428px" height="425px"/>
