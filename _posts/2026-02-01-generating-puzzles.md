@@ -30,7 +30,7 @@ The goal is to write a number into each arrow, such that **the number in each ar
 
 > *Although not officially a part of the puzzles rule, it is typically assumed that any well-formed logic puzzle has a unique solution. But whether this fact may be used in solving the puzzle is considered controversial by some players*.
 
-I set out to write an alogrithm to generate these kinds of puzzles. However, not just *any* valid puzzles, they should have the *right* level of difficulty: not trivial, but also not too frustrating. But what does that even mean -- when a puzzle is too frustrating to solve? 
+I set out to write an algorithm to generate these kinds of puzzles. However, not just *any* valid puzzles, they should have the *right* level of difficulty: not trivial, but also not too frustrating. But what does that even mean -- when a puzzle is too frustrating to solve? 
 
 # How Humans Solve Puzzles, as Opposed to Machines
 
@@ -115,7 +115,7 @@ def solve(puzzle):
       if rule.progress(puzzle):
         rule.apply()
         progress = True
-        if puzzle.solved()
+        if puzzle.solved():
           return solution
   return UNFINISHED
 ```
@@ -133,7 +133,7 @@ class Rule(ABC):
 ```
 
 As an example let's take this rule:
-> *If two arrows are directly next two each other and point in the same direction, and the front arrow is filled with number `i`, then the back arrow has either number `i` or `i+1`.*
+> *If two arrows are directly next to each other and point in the same direction, and the front arrow is filled with number `i`, then the back arrow has either number `i` or `i+1`.*
 
 To illustrate this, take a look at the following puzzle. The marked arrow points at an arrow filled with a $1$.
 
@@ -168,7 +168,7 @@ class NextArrowSameDirection(Rule):
 In a puzzle with $n$ by $n$ cells, this rule takes $\mathcal{O}(n^2)$ time to check,
 
 This approach would certainly work well. So why did I not follow it?
-1. It seems a bit *inflexible*, for fast iteration / prototpying, to always write or adapt code. Also, especially for more complex rules, the nested loops and conditions can get harder to read and feel quite detached from the actual rule idea.
+1. It seems a bit *inflexible*, for fast iteration / prototyping, to always write or adapt code. Also, especially for more complex rules, the nested loops and conditions can get harder to read and feel quite detached from the actual rule idea.
 2. (*and more importantly*) I thought it would be much less fun than what I ended up doing instead. Which is...
 
 # Representing Rules Using Logical Formulas
@@ -333,7 +333,7 @@ and the conclusion ends up as
 We can finally model check this in $\mathcal{O}(n^2)$, as the interpretation will roughly execute
 ```python
 for p in puzzle.cells:
-  if puzzle.dir(puzzle.next(p)) = puzzle.dir(p) and puzzle.val(puzzle.next(p)) != puzzle.nil:
+  if puzzle.dir(puzzle.next(p)) == puzzle.dir(p) and puzzle.val(puzzle.next(p)) != puzzle.nil:
     return Witness(p=p)
 return None
 ```
@@ -409,11 +409,11 @@ Using these tweaks, I can generate puzzles of these sizes in a reasonable amount
 
 The main issue with generating puzzles of size `> 9x9` is actually that most random arrow patterns have no solution in that case. Generally, the initial arrow rotations put a lot of constraints on the puzzle already, such that initial clues are usually rare or even entirely absent. Probably, generating even larger puzzles would require a different generation approach -- one that chooses arrow rotations less randomly.
 
-As a final note on generation, further improvements on generated puzzle quality can be achieved by defining additional constraints that rule out *uninspired* puzzles. For example, we'd like to discard puzzles that have an disproportionate amount of *ones* in the solution. To generate puzzles at a certain desired difficulty, we can also require that the puzzle can be solved by a $k$-solver, but *not* by a ($k$-$1$)-solver. Finally, we can use constraints to generate puzzles with *unique qualities*, such as requiring the use of a specific logical rule to solve them "the intended way".
+As a final note on generation, further improvements on generated puzzle quality can be achieved by defining additional constraints that rule out *uninspired* puzzles. For example, we'd like to discard puzzles that have a disproportionate amount of *ones* in the solution. To generate puzzles at a certain desired difficulty, we can also require that the puzzle can be solved by a $k$-solver, but *not* by a ($k$-$1$)-solver. Finally, we can use constraints to generate puzzles with *unique qualities*, such as requiring the use of a specific logical rule to solve them "the intended way".
 
 # Concluding Remarks
 
-I had the basic idea of such a rule-based generator and solver for a while, originally in the context of *Sudoku*. Ultimately I never built it due to **a)** time constraints and **b)** there already being enough *Sudoku* solvers and generators. Of course, FO based rule formulations for such puzzles are not a new idea. For example, they have been considered for *Suduko* in "[The Hidden Logic of Sudoku](https://www.researchgate.net/publication/280301600_The_Hidden_Logic_of_Sudoku)" by *Denis Berthier*.
+I had the basic idea of such a rule-based generator and solver for a while, originally in the context of *Sudoku*. Ultimately I never built it due to **a)** time constraints and **b)** there already being enough *Sudoku* solvers and generators. Of course, FO based rule formulations for such puzzles are not a new idea. For example, they have been considered for *Sudoku* in "[The Hidden Logic of Sudoku](https://www.researchgate.net/publication/280301600_The_Hidden_Logic_of_Sudoku)" by *Denis Berthier*.
 
 Once I discovered the *japanese arrow* puzzles, which are not as ubiquitous as *Sudoku*, I was motivated anew to try the approach there. The FO implementation from parsing over optimization to interpretation is independent of the specific puzzle though. It could be interesting to try and write solvers and generators for other puzzles in this framework.
 
